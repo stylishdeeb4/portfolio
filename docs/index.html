@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>neo.solution｜ポートフォリオ — AI活用のコンテンツ制作・開発</title>
+<meta name="description" content="neo.solutionのポートフォリオ。生成AIを活用した記事・台本の執筆、Webアプリ開発、動画制作、業務自動化の実績をまとめています。">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="neo.solution｜ポートフォリオ">
+<meta property="og:description" content="生成AIを活用した記事・台本の執筆、Webアプリ開発、動画制作、業務自動化の実績。">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧩</text></svg>">
+<style>
+  :root{
+    --bg:#0d1117; --bg-soft:#131a24; --card:#161d29; --line:#243044;
+    --fg:#e8edf5; --fg-dim:#9fb0c6; --fg-mute:#6d7f96;
+    --accent:#4ade9e; --accent2:#7cc4ff; --gold:#ffc94a;
+    --radius:14px; --maxw:960px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg); color:var(--fg);
+    font-family:"Helvetica Neue",-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",Meiryo,sans-serif;
+    line-height:1.85; font-size:16px; -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--accent2); text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 20px}
+
+  /* header */
+  header{
+    background:linear-gradient(160deg,#111a26 0%,#0d1117 70%);
+    border-bottom:1px solid var(--line); padding:64px 0 52px;
+  }
+  .name{font-size:clamp(28px,5.2vw,40px); font-weight:700; letter-spacing:.02em}
+  .name span{color:var(--accent)}
+  .tagline{color:var(--fg-dim); margin-top:14px; font-size:clamp(15px,2.4vw,17px)}
+  .badges{display:flex; flex-wrap:wrap; gap:8px; margin-top:22px}
+  .badge{
+    background:var(--card); border:1px solid var(--line); color:var(--fg-dim);
+    padding:5px 12px; border-radius:999px; font-size:13px;
+  }
+
+  /* sections */
+  section{padding:52px 0; border-bottom:1px solid var(--line)}
+  h2{
+    font-size:20px; font-weight:700; letter-spacing:.04em; margin-bottom:8px;
+    display:flex; align-items:center; gap:10px;
+  }
+  h2::before{content:""; width:4px; height:20px; background:var(--accent); border-radius:2px}
+  .sec-note{color:var(--fg-mute); font-size:14px; margin-bottom:26px}
+
+  /* cards */
+  .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:18px}
+  .card{
+    background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+    padding:22px; display:flex; flex-direction:column; gap:10px;
+  }
+  .card h3{font-size:17px; font-weight:700; line-height:1.5}
+  .card p{color:var(--fg-dim); font-size:14.5px}
+  .meta{display:flex; flex-wrap:wrap; gap:6px; margin-top:2px}
+  .tag{
+    background:#1d2736; color:var(--fg-mute); border-radius:6px;
+    padding:3px 9px; font-size:12px;
+  }
+  .links{margin-top:auto; padding-top:12px; display:flex; flex-wrap:wrap; gap:14px; font-size:14px}
+  .links a::after{content:" ↗"; font-size:11px; color:var(--fg-mute)}
+
+  /* skills */
+  .skills{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:16px}
+  .skill{background:var(--bg-soft); border:1px solid var(--line); border-radius:var(--radius); padding:18px}
+  .skill h3{font-size:15px; color:var(--accent); margin-bottom:8px}
+  .skill ul{list-style:none; font-size:14px; color:var(--fg-dim)}
+  .skill li{padding:3px 0 3px 16px; position:relative}
+  .skill li::before{content:"–"; position:absolute; left:0; color:var(--fg-mute)}
+
+  /* work policy */
+  .policy{background:var(--bg-soft); border:1px solid var(--line); border-radius:var(--radius); padding:24px}
+  .policy ul{list-style:none}
+  .policy li{padding:7px 0 7px 24px; position:relative; color:var(--fg-dim); font-size:15px}
+  .policy li::before{content:"✓"; position:absolute; left:0; color:var(--accent); font-weight:700}
+  .policy strong{color:var(--fg)}
+
+  /* contact */
+  .contact p{color:var(--fg-dim); font-size:15px}
+  .cta{
+    display:inline-block; margin-top:18px; background:var(--accent); color:#0b1a13;
+    font-weight:700; padding:13px 26px; border-radius:10px; font-size:15px;
+  }
+  .cta:hover{text-decoration:none; opacity:.9}
+
+  footer{padding:34px 0 46px; color:var(--fg-mute); font-size:13px; text-align:center}
+
+  @media (max-width:520px){
+    header{padding:46px 0 38px}
+    section{padding:40px 0}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="name">neo.<span>solution</span></div>
+    <p class="tagline">
+      生成AIを軸に、<strong>記事・台本の執筆</strong>から<strong>Webアプリ開発</strong>・<strong>動画制作</strong>・<strong>業務自動化</strong>まで。<br>
+      企画から公開まで、ひとりで一気通貫で形にしています。
+    </p>
+    <div class="badges">
+      <span class="badge">記事・コラム執筆</span>
+      <span class="badge">YouTube台本</span>
+      <span class="badge">Claude / ChatGPT</span>
+      <span class="badge">Python / FastAPI</span>
+      <span class="badge">Next.js</span>
+      <span class="badge">業務自動化</span>
+      <span class="badge">完全リモート</span>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>公開しているアプリ</h2>
+    <p class="sec-note">企画・設計・実装・デザイン・公開まで、すべて個人で担当。いずれもブラウザから今すぐ触れます。</p>
+    <div class="grid">
+
+      <div class="card">
+        <h3>クレーン物理ラボ</h3>
+        <p>クレーンゲーム「橋渡し」の攻略を物理計算で支援するPWA。かかり量・落下回転角・端押し力の計算に加え、2D物理シミュレーションとスマホセンサーでの水平計測を搭載。</p>
+        <div class="meta">
+          <span class="tag">PWA</span><span class="tag">物理演算</span><span class="tag">matter.js</span><span class="tag">センサーAPI</span>
+        </div>
+        <div class="links">
+          <a href="https://stylishdeeb4.github.io/crane-physics-lab/" target="_blank" rel="noopener">アプリを開く</a>
+          <a href="https://github.com/stylishdeeb4/crane-physics-lab" target="_blank" rel="noopener">ソースコード</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>暇つぶしラボ</h3>
+        <p>一筆書き・数字タップ・反射神経・記憶力の4種を収録したミニゲーム集。一筆書きは全6問についてオイラー路の存在を検証し、詰まない設計に。オフライン動作対応。</p>
+        <div class="meta">
+          <span class="tag">PWA</span><span class="tag">ゲーム設計</span><span class="tag">グラフ理論</span><span class="tag">オフライン対応</span>
+        </div>
+        <div class="links">
+          <a href="https://stylishdeeb4.github.io/himatsubushi-lab/" target="_blank" rel="noopener">アプリを開く</a>
+          <a href="https://github.com/stylishdeeb4/himatsubushi-lab" target="_blank" rel="noopener">ソースコード</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>シフト給料ラボ</h3>
+        <p>アルバイトの給料を自動計算するPWA。深夜割増・残業（日8h／週40h超）・日またぎシフトに対応し、2026年時点の「年収の壁」をメーター表示。計算結果は複数ケースで手計算と照合済み。</p>
+        <div class="meta">
+          <span class="tag">PWA</span><span class="tag">労務計算</span><span class="tag">ライト/ダーク対応</span><span class="tag">CSV出力</span>
+        </div>
+        <div class="links">
+          <a href="https://stylishdeeb4.github.io/shift-pay-lab/" target="_blank" rel="noopener">アプリを開く</a>
+          <a href="https://github.com/stylishdeeb4/shift-pay-lab" target="_blank" rel="noopener">ソースコード</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>執筆・コンテンツ制作</h2>
+    <p class="sec-note">長文の構成力と、リサーチにもとづく正確さを重視しています。</p>
+    <div class="grid">
+
+      <div class="card">
+        <h3>Kindle書籍の執筆・出版</h3>
+        <p>個人店向けのGoogleマップ集客（MEO）実用書を約2万字・全7章で執筆し、Kindleで出版。実地調査をもとに「店主が自分で運用する」視点で構成しました。企画・原稿・表紙・内容紹介まで一貫して担当。</p>
+        <div class="meta">
+          <span class="tag">約20,000字</span><span class="tag">実用書</span><span class="tag">構成設計</span><span class="tag">出版済み</span>
+        </div>
+        <div class="links" id="kindle-links">
+          <!-- KINDLE_LINK -->
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>YouTube「個人開発ラボ」</h3>
+        <p>自作アプリを紹介するショート動画チャンネルを運営。企画・台本・ナレーション原稿・映像制作までを担当しています。視聴者に実際に解かせてから種明かしをする参加型の構成で、離脱を抑える設計を意識しています。</p>
+        <div class="meta">
+          <span class="tag">企画</span><span class="tag">台本</span><span class="tag">動画制作</span><span class="tag">縦型ショート</span>
+        </div>
+        <div class="links">
+          <a href="https://www.youtube.com/@kojinkaihatsu-lab" target="_blank" rel="noopener">チャンネル</a>
+          <a href="https://youtu.be/AVFeJIB7Ufw" target="_blank" rel="noopener">制作例（暇つぶしラボ）</a>
+          <a href="https://youtu.be/o0mkalsN-hg" target="_blank" rel="noopener">制作例（クレーン物理ラボ）</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>解説系YouTubeの台本執筆</h3>
+        <p>解説チャンネルの台本を継続的に執筆。1本あたり8,000〜10,000字規模の長尺構成にも対応します。冒頭のフックから終盤の余韻まで感情の起伏を設計し、事実は一次情報で裏取りしたうえで書き起こします。</p>
+        <div class="meta">
+          <span class="tag">長尺台本</span><span class="tag">リサーチ</span><span class="tag">構成設計</span><span class="tag">掛け合い形式</span>
+        </div>
+        <div class="links">
+          <a href="#contact">サンプルは個別提示します</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>開発・業務自動化</h2>
+    <p class="sec-note">クライアント業務・自社運用のため非公開のものは、概要のみ記載しています。</p>
+    <div class="grid">
+
+      <div class="card">
+        <h3>AI動画生成Webアプリ</h3>
+        <p>台本から動画までを生成するWebアプリを開発。バックエンドをFastAPI、フロントをNext.jsで構成し、生成AIプロバイダを切り替えられる設計にしています。</p>
+        <div class="meta">
+          <span class="tag">FastAPI</span><span class="tag">Next.js</span><span class="tag">API連携</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>コンテンツ制作の自動化パイプライン</h3>
+        <p>リサーチ→原稿生成→音声合成→動画出力までを、生成AIとスクリプトの組み合わせで自動化。役割ごとにAIを分担させ、要所で人のチェックを挟む運用設計にしています。</p>
+        <div class="meta">
+          <span class="tag">マルチエージェント</span><span class="tag">Python</span><span class="tag">TTS</span><span class="tag">パイプライン設計</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>業務データの集約・自動処理</h3>
+        <p>複数の外部サービスをAPIで連携させ、スプレッドシートやドキュメントへ自動でデータを集約・整形する仕組みを構築。手作業のコピー&amp;ペーストを置き換えます。</p>
+        <div class="meta">
+          <span class="tag">API連携</span><span class="tag">スプレッドシート</span><span class="tag">GAS</span><span class="tag">定型業務の自動化</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>できること</h2>
+    <p class="sec-note"></p>
+    <div class="skills">
+
+      <div class="skill">
+        <h3>ライティング</h3>
+        <ul>
+          <li>SEO記事・コラム・オウンドメディア</li>
+          <li>YouTube台本（ショート／長尺）</li>
+          <li>操作マニュアル・手順書</li>
+          <li>取材・資料からの記事化</li>
+          <li>リライト・推敲・校正</li>
+        </ul>
+      </div>
+
+      <div class="skill">
+        <h3>生成AIの実務活用</h3>
+        <ul>
+          <li>Claude / ChatGPT / Gemini</li>
+          <li>プロンプト設計・出力品質の改善</li>
+          <li>Claude Code を使った開発</li>
+          <li>AI出力の検証・ファクトチェック</li>
+        </ul>
+      </div>
+
+      <div class="skill">
+        <h3>開発</h3>
+        <ul>
+          <li>Python（自動化・API連携）</li>
+          <li>FastAPI / Next.js / React</li>
+          <li>HTML・CSS・JavaScript</li>
+          <li>Google Apps Script</li>
+          <li>Notion / Make による業務設計</li>
+        </ul>
+      </div>
+
+      <div class="skill">
+        <h3>動画・資料</h3>
+        <ul>
+          <li>縦型ショート動画の企画〜制作</li>
+          <li>AIナレーション・字幕</li>
+          <li>PowerPoint / スライド資料</li>
+          <li>図解・キャプチャ入りマニュアル</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>仕事の進め方</h2>
+    <p class="sec-note"></p>
+    <div class="policy">
+      <ul>
+        <li><strong>AIは補助、仕上げは自分の言葉で。</strong>生成した文章をそのまま納品することはしません。必ず読み直し、不自然な言い回しを整えてからお渡しします。</li>
+        <li><strong>事実は裏取りしてから書く。</strong>料金・制度・数値などは公式情報や一次情報で確認します。あいまいな点は推測で埋めず、必ず確認します。</li>
+        <li><strong>できないことは、できないと言う。</strong>経験のない領域は正直にお伝えしたうえで、キャッチアップ前提かどうかをご相談します。</li>
+        <li><strong>レスポンスは早めに。</strong>平日・土日とも対応可能です。連絡は原則当日中にお返しします。</li>
+        <li><strong>納期を守り、遅れそうなときは早めに相談します。</strong></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <h2>お問い合わせ</h2>
+    <p class="sec-note"></p>
+    <p>
+      お仕事のご依頼・ご相談は、クラウドワークスのメッセージよりお願いいたします。<br>
+      守秘義務のある納品物については、限定リンクにて個別にサンプルをご提示できます。お気軽にお申し付けください。
+    </p>
+    <a class="cta" href="https://crowdworks.jp/public/employees/6792156" target="_blank" rel="noopener">クラウドワークスのプロフィール</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    © neo.solution — 掲載内容は個人で企画・制作したものです。
+  </div>
+</footer>
+
+</body>
+</html>
