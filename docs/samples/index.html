@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>制作サンプル｜neo.solution</title>
+<meta name="description" content="操作マニュアル・企画提案書・サービス紹介資料の制作サンプル。実際の成果物と、架空サービスを題材にしたデモを掲載しています。">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📄</text></svg>">
+<style>
+  :root{
+    --bg:#0d1117; --card:#161d29; --line:#243044;
+    --fg:#e8edf5; --fg-dim:#9fb0c6; --fg-mute:#6d7f96;
+    --accent:#4ade9e; --accent2:#7cc4ff;
+    --maxw:900px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:var(--bg); color:var(--fg);
+    font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",Meiryo,sans-serif;
+    line-height:1.85; font-size:16px; -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--accent2); text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 20px}
+
+  header{background:linear-gradient(160deg,#111a26 0%,#0d1117 70%); border-bottom:1px solid var(--line); padding:54px 0 42px}
+  .back{color:var(--fg-mute); font-size:13.5px}
+  h1{font-size:clamp(24px,4.6vw,32px); font-weight:700; margin-top:14px}
+  .lead{color:var(--fg-dim); margin-top:14px; font-size:15.5px}
+
+  section{padding:44px 0; border-bottom:1px solid var(--line)}
+  h2{font-size:19px; font-weight:700; display:flex; align-items:center; gap:10px; margin-bottom:6px}
+  h2::before{content:""; width:4px; height:19px; background:var(--accent); border-radius:2px}
+  .sec-note{color:var(--fg-mute); font-size:14px; margin-bottom:24px}
+
+  .item{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:26px; margin-bottom:18px}
+  .item h3{font-size:17.5px; font-weight:700; line-height:1.5}
+  .badge{
+    display:inline-block; background:#1d2736; color:var(--fg-mute);
+    border-radius:6px; padding:3px 10px; font-size:12px; margin-left:8px; vertical-align:middle;
+  }
+  .item p{color:var(--fg-dim); font-size:14.5px; margin-top:10px}
+  .points{list-style:none; margin-top:14px; border-top:1px solid var(--line); padding-top:14px}
+  .points li{color:var(--fg-dim); font-size:14px; padding:4px 0 4px 18px; position:relative}
+  .points li::before{content:"–"; position:absolute; left:0; color:var(--fg-mute)}
+  .actions{margin-top:18px; display:flex; flex-wrap:wrap; gap:12px}
+  .btn{
+    display:inline-block; border-radius:9px; padding:11px 20px; font-size:14.5px; font-weight:700;
+  }
+  .btn.primary{background:var(--accent); color:#0b1a13}
+  .btn.primary:hover{opacity:.9; text-decoration:none}
+  .btn.ghost{border:1px solid var(--line); color:var(--fg-dim)}
+  .btn.ghost:hover{border-color:var(--fg-mute); text-decoration:none}
+
+  .disclaimer{
+    background:#131a24; border:1px solid var(--line); border-radius:12px;
+    padding:20px 24px; color:var(--fg-dim); font-size:14px; margin-top:8px;
+  }
+  .disclaimer b{color:var(--fg); display:block; margin-bottom:6px; font-size:14.5px}
+
+  footer{padding:32px 0 46px; color:var(--fg-mute); font-size:13px; text-align:center}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="back" href="../index.html">← ポートフォリオへ戻る</a>
+    <h1>制作サンプル</h1>
+    <p class="lead">
+      納品物の多くは守秘義務があり公開できないため、<strong>お見せできる形で作り直したサンプル</strong>を掲載しています。
+      実際の案件では、いただいた要件・トンマナに合わせて作成します。
+    </p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>操作マニュアル</h2>
+    <p class="sec-note">画面キャプチャに注釈を入れ、はじめて使う人がつまずかない順序で構成しています。</p>
+
+    <div class="item">
+      <h3>シフト給料ラボ 操作ガイド<span class="badge">実在のアプリが題材</span></h3>
+      <p>
+        自作アプリを題材にした操作マニュアルです。実際の画面を撮影し、赤枠・番号で注目箇所を示しています。
+        手順・計算ルールの表・注意書き・FAQまでを含む構成で、Webページとしてそのまま閲覧できます。
+      </p>
+      <ul class="points">
+        <li>実画面のキャプチャに、赤枠と番号バッジで注釈を追加</li>
+        <li>番号と説明文を対応させ、どこを指しているか迷わない形に</li>
+        <li>間違えやすい入力（休憩を「分」で入れる等）は警告ボックスで明示</li>
+        <li>計算ルールを表で整理し、算出根拠を追えるように記載</li>
+      </ul>
+      <div class="actions">
+        <a class="btn primary" href="manual.html">マニュアルを見る</a>
+        <a class="btn ghost" href="https://stylishdeeb4.github.io/shift-pay-lab/" target="_blank" rel="noopener">題材のアプリを開く</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>スライド資料（PowerPoint）</h2>
+    <p class="sec-note">16:9・PowerPoint形式で作成しています。ダウンロードしてそのまま編集できます。</p>
+
+    <div class="item">
+      <h3>企画提案書：シフト給料アプリの企画<span class="badge">実在のアプリが題材</span></h3>
+      <p>
+        自作アプリについて、背景と課題からロードマップまでをまとめた提案書です（全10枚）。
+        課題整理 → ターゲット → 解決策 → 機能 → 他手段との比較 → 開発計画 → 成果、という順で構成しています。
+      </p>
+      <ul class="points">
+        <li>表紙／目次／課題／ターゲット／解決策／機能／比較表／ロードマップ／数値／まとめ</li>
+        <li>色は3色に絞り、見出し・本文・補足の階層を全ページで統一</li>
+        <li>比較表と数値スライドで、主張の根拠を示す構成</li>
+      </ul>
+      <div class="actions">
+        <a class="btn primary" href="proposal.pptx" download>PowerPointをダウンロード</a>
+      </div>
+    </div>
+
+    <div class="item">
+      <h3>サービス紹介資料：手順書クラウド「テジュン」<span class="badge">架空サービスのデモ</span></h3>
+      <p>
+        BtoB向けサービス紹介資料のデモです（全8枚）。実在しない架空のサービスを題材に、
+        課題提起 → サービス概要 → 特長 → 導入の流れ → 料金 → 効果、という営業資料の型で構成しています。
+      </p>
+      <ul class="points">
+        <li>料金プラン表・導入ステップ・効果指標など、営業資料に必要な要素を一通り収録</li>
+        <li>架空である旨と、数値が実データでない旨を資料内に明記</li>
+      </ul>
+      <div class="actions">
+        <a class="btn primary" href="service.pptx" download>PowerPointをダウンロード</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="disclaimer">
+      <b>掲載内容について</b>
+      「実在のアプリが題材」と記載したものは、企画から公開まで自分で手掛けたアプリを題材にしています。画面・数値はすべて実物です。<br>
+      「架空サービスのデモ」と記載したものは、資料の構成力をお見せするために作成したもので、
+      サービス・企業・数値はすべて架空です。実在の団体とは関係ありません。
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    制作：neo.solution　—　<a href="../index.html">ポートフォリオへ戻る</a>
+  </div>
+</footer>
+
+</body>
+</html>

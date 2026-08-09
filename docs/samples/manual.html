@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>操作マニュアル サンプル｜シフト給料ラボ — neo.solution</title>
+<meta name="description" content="操作マニュアルの制作サンプル。実画面のキャプチャに注釈を入れ、初めて使う人がつまずかない順序で手順を解説しています。">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+<style>
+  :root{
+    --bg:#f7f8fa; --paper:#ffffff; --line:#e3e7ee; --line-soft:#eef1f6;
+    --fg:#1c2430; --fg-dim:#5a6878; --fg-mute:#8996a6;
+    --accent:#2c4bc7; --accent-soft:#eef2ff;
+    --warn-bg:#fff8e6; --warn-line:#f0d089; --warn-ink:#7a5a10;
+    --tip-bg:#eef7f2; --tip-line:#a8d8bf; --tip-ink:#14624a;
+    --maxw:820px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg); color:var(--fg);
+    font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",Meiryo,sans-serif;
+    line-height:1.9; font-size:16px; -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--accent)}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 20px}
+
+  /* サンプル告知バー */
+  .ribbon{
+    background:var(--accent); color:#fff; text-align:center;
+    padding:10px 20px; font-size:13.5px; letter-spacing:.02em;
+  }
+  .ribbon a{color:#fff; text-decoration:underline}
+
+  header{background:var(--paper); border-bottom:1px solid var(--line); padding:44px 0 34px}
+  .kicker{color:var(--accent); font-size:13px; font-weight:700; letter-spacing:.08em; margin-bottom:10px}
+  h1{font-size:clamp(23px,4.4vw,31px); line-height:1.5; font-weight:700}
+  .lead{color:var(--fg-dim); margin-top:14px; font-size:15.5px}
+  .meta{
+    margin-top:22px; display:flex; flex-wrap:wrap; gap:8px 22px;
+    color:var(--fg-mute); font-size:13px; border-top:1px solid var(--line-soft); padding-top:16px;
+  }
+
+  /* 目次 */
+  nav.toc{background:var(--paper); border:1px solid var(--line); border-radius:12px; padding:22px 26px; margin:34px 0}
+  nav.toc h2{font-size:14px; letter-spacing:.06em; color:var(--fg-mute); margin-bottom:12px}
+  nav.toc ol{list-style:none; counter-reset:toc}
+  nav.toc li{counter-increment:toc; padding:5px 0 5px 30px; position:relative; font-size:15px}
+  nav.toc li::before{
+    content:counter(toc); position:absolute; left:0; top:8px;
+    width:20px; height:20px; border-radius:50%; background:var(--accent-soft); color:var(--accent);
+    font-size:11px; font-weight:700; display:grid; place-items:center;
+  }
+  nav.toc a{text-decoration:none}
+  nav.toc a:hover{text-decoration:underline}
+
+  section{margin:46px 0}
+  h2.sec{
+    font-size:20px; font-weight:700; padding-bottom:12px; border-bottom:2px solid var(--fg);
+    display:flex; align-items:baseline; gap:12px;
+  }
+  h2.sec .no{
+    color:#fff; background:var(--fg); font-size:13px; padding:3px 11px; border-radius:5px;
+    letter-spacing:.04em; flex:none;
+  }
+  .sec-lead{color:var(--fg-dim); font-size:15px; margin:18px 0 24px}
+
+  /* 手順 */
+  .steps{list-style:none; counter-reset:step}
+  .steps > li{
+    counter-increment:step; background:var(--paper); border:1px solid var(--line);
+    border-radius:12px; padding:24px 26px; margin-bottom:16px;
+  }
+  .steps h3{
+    font-size:16.5px; font-weight:700; display:flex; align-items:center; gap:12px; margin-bottom:12px;
+  }
+  .steps h3::before{
+    content:counter(step); flex:none;
+    width:28px; height:28px; border-radius:50%; background:var(--accent); color:#fff;
+    font-size:14px; display:grid; place-items:center;
+  }
+  .steps p{color:var(--fg-dim); font-size:15px}
+  .steps p + p{margin-top:10px}
+
+  /* 図と凡例 */
+  figure{margin:20px 0 0}
+  figure img{
+    width:100%; display:block; border:1px solid var(--line); border-radius:10px; background:#fff;
+  }
+  figcaption{color:var(--fg-mute); font-size:12.5px; margin-top:8px; text-align:center}
+  .legend{list-style:none; margin:16px 0 0; border-top:1px solid var(--line-soft); padding-top:14px}
+  .legend li{
+    display:flex; gap:12px; align-items:flex-start; padding:6px 0; font-size:14.5px; color:var(--fg-dim);
+  }
+  .legend .n{
+    flex:none; width:22px; height:22px; border-radius:50%; background:#e53935; color:#fff;
+    font-size:12px; font-weight:700; display:grid; place-items:center; margin-top:3px;
+  }
+  .legend b{color:var(--fg); font-weight:700}
+
+  /* 注記ボックス */
+  .note{border-radius:10px; padding:16px 20px; margin:18px 0 0; font-size:14.5px; line-height:1.85}
+  .note b{display:block; margin-bottom:4px; font-size:13.5px; letter-spacing:.02em}
+  .note.warn{background:var(--warn-bg); border:1px solid var(--warn-line); color:var(--warn-ink)}
+  .note.tip{background:var(--tip-bg); border:1px solid var(--tip-line); color:var(--tip-ink)}
+
+  /* 表 */
+  .table-scroll{overflow-x:auto; margin-top:18px}
+  table{border-collapse:collapse; width:100%; font-size:14.5px; background:var(--paper); min-width:480px}
+  th,td{border:1px solid var(--line); padding:11px 14px; text-align:left; vertical-align:top}
+  th{background:#f2f5fa; font-weight:700; white-space:nowrap}
+  td.num{text-align:right; white-space:nowrap; font-variant-numeric:tabular-nums}
+
+  /* FAQ */
+  .faq{background:var(--paper); border:1px solid var(--line); border-radius:12px; overflow:hidden}
+  .faq details{border-bottom:1px solid var(--line-soft)}
+  .faq details:last-child{border-bottom:none}
+  .faq summary{
+    padding:16px 22px; cursor:pointer; font-weight:700; font-size:15px; list-style:none;
+    display:flex; align-items:center; gap:10px;
+  }
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::before{content:"Q"; color:var(--accent); font-size:13px; flex:none}
+  .faq details[open] summary{background:#fafbfd}
+  .faq .a{padding:0 22px 18px 44px; color:var(--fg-dim); font-size:14.5px}
+
+  footer{
+    border-top:1px solid var(--line); margin-top:56px; padding:28px 0 44px;
+    color:var(--fg-mute); font-size:13px;
+  }
+  footer a{color:var(--fg-dim)}
+
+  @media (max-width:520px){
+    .steps > li{padding:20px 18px}
+    nav.toc{padding:18px 20px}
+  }
+</style>
+</head>
+<body>
+
+<div class="ribbon">
+  これは <b>操作マニュアルの制作サンプル</b>です（題材：自作アプリ「シフト給料ラボ」）　—
+  <a href="../index.html">neo.solution のポートフォリオへ戻る</a>
+</div>
+
+<header>
+  <div class="wrap">
+    <div class="kicker">操作マニュアル</div>
+    <h1>シフト給料ラボ 操作ガイド<br>― シフトを登録して給料を計算する ―</h1>
+    <p class="lead">
+      はじめて使う方が、登録から給料の確認までを迷わず終えられるようにまとめた手引きです。
+      画面の写真に沿って進めれば、3分ほどで最初の1件を登録できます。
+    </p>
+    <div class="meta">
+      <span>対象：はじめて利用する方</span>
+      <span>所要時間：約3分</span>
+      <span>対応環境：スマートフォン／パソコンのブラウザ</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <nav class="toc">
+    <h2>もくじ</h2>
+    <ol>
+      <li><a href="#s1">アプリを開く／画面の見かた</a></li>
+      <li><a href="#s2">シフトを登録する</a></li>
+      <li><a href="#s3">登録した内容を確認する</a></li>
+      <li><a href="#s4">給料の計算ルール</a></li>
+      <li><a href="#s5">よくあるご質問</a></li>
+    </ol>
+  </nav>
+
+  <!-- 1 -->
+  <section id="s1">
+    <h2 class="sec"><span class="no">STEP 1</span>アプリを開く／画面の見かた</h2>
+    <p class="sec-lead">
+      インストールは不要です。ブラウザで次のURLを開くと、すぐに使いはじめられます。<br>
+      <a href="https://stylishdeeb4.github.io/shift-pay-lab/" target="_blank" rel="noopener">https://stylishdeeb4.github.io/shift-pay-lab/</a>
+    </p>
+
+    <ol class="steps">
+      <li>
+        <h3>最初の画面を確認します</h3>
+        <p>まだ何も登録していない状態では、金額はすべて「¥0」と表示されます。この画面が操作の起点になります。</p>
+        <figure>
+          <img src="img/step1.png" alt="シフト給料ラボの初期画面。月の切り替え、給料サマリー、年収の壁メーターに番号を付けて示している">
+          <figcaption>最初に表示される画面</figcaption>
+        </figure>
+        <ul class="legend">
+          <li><span class="n">1</span><span><b>月の切り替え</b>：左右の矢印で、表示する月を移動します。給料はこの月ごとに集計されます。</span></li>
+          <li><span class="n">2</span><span><b>その月の給料（見込み）</b>：実働時間・出勤日数・深夜時間・交通費が、登録内容に応じて自動で更新されます。</span></li>
+          <li><span class="n">3</span><span><b>年収の壁メーター</b>：1年間の累計収入が、扶養や社会保険の基準にどれくらい近づいているかを表示します。</span></li>
+        </ul>
+        <div class="note tip">
+          <b>ホーム画面に追加できます</b>
+          ブラウザのメニューから「ホーム画面に追加」を選ぶと、アプリのように起動できます。通信のない場所でも起動できます。
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <!-- 2 -->
+  <section id="s2">
+    <h2 class="sec"><span class="no">STEP 2</span>シフトを登録する</h2>
+    <p class="sec-lead">画面のいちばん下にある「＋ シフトを追加」から登録します。ここでは例として、17:00〜23:30・休憩60分・時給1,100円・交通費600円のシフトを登録します。</p>
+
+    <ol class="steps">
+      <li>
+        <h3>「＋ シフトを追加」を押します</h3>
+        <p>画面下部にある青いボタンです。押すと入力画面が開きます。カレンダーの日付を直接押しても、その日の入力画面が開きます。</p>
+      </li>
+      <li>
+        <h3>勤務した内容を入力します</h3>
+        <p>入力するとその場で金額が計算され、画面下に内訳が表示されます。保存する前に、金額が想定どおりか確認できます。</p>
+        <figure>
+          <img src="img/step2.png" alt="シフトの入力画面。日付、開始・終了、休憩・時給・交通費、計算結果、保存ボタンに番号を付けて示している">
+          <figcaption>シフトの入力画面（数値を入れた状態）</figcaption>
+        </figure>
+        <ul class="legend">
+          <li><span class="n">1</span><span><b>日付</b>：勤務した日を選びます。カレンダーから開いた場合は、その日付が最初から入っています。</span></li>
+          <li><span class="n">2</span><span><b>開始・終了</b>：勤務時間を入れます。終了が開始より前の時刻なら、日をまたいだ勤務として計算されます。</span></li>
+          <li><span class="n">3</span><span><b>休憩・時給・交通費</b>：休憩は「分」で入力します（例：1時間なら 60）。交通費は給料とは別枠で集計されます。</span></li>
+          <li><span class="n">4</span><span><b>計算の内訳</b>：拘束時間、休憩を引いた実働、基本給、深夜割増、交通費、支給額の順に表示されます。</span></li>
+          <li><span class="n">5</span><span><b>保存</b>：内容を確認したら押します。取り消したい場合は「キャンセル」を押してください。</span></li>
+        </ul>
+        <div class="note warn">
+          <b>休憩は「分」で入力してください</b>
+          「1」と入力すると1時間ではなく<strong>1分</strong>として扱われます。1時間の休憩なら「60」と入力してください。
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <!-- 3 -->
+  <section id="s3">
+    <h2 class="sec"><span class="no">STEP 3</span>登録した内容を確認する</h2>
+    <p class="sec-lead">保存すると元の画面に戻り、登録した内容が3か所に反映されます。</p>
+
+    <ol class="steps">
+      <li>
+        <h3>反映された内容を確かめます</h3>
+        <p>今回の例では、実働5.5時間・深夜1.5時間・支給額 ¥7,063 として登録されました。</p>
+        <figure>
+          <img src="img/step3.png" alt="保存後の画面。月の集計、カレンダー上の該当日、明細行に番号を付けて示している">
+          <figcaption>保存したあとの画面</figcaption>
+        </figure>
+        <ul class="legend">
+          <li><span class="n">1</span><span><b>月の集計</b>：その月の合計金額と、実働・出勤日数・深夜時間・交通費が更新されます。</span></li>
+          <li><span class="n">2</span><span><b>カレンダー</b>：登録した日に実働時間が表示されます。深夜勤務を含む日には印が付きます。</span></li>
+          <li><span class="n">3</span><span><b>明細</b>：カレンダーの下に、その日の勤務時間・時給・支給額が1行ずつ並びます。</span></li>
+        </ul>
+        <div class="note tip">
+          <b>修正・削除したいとき</b>
+          明細の行、またはカレンダーの日付を押すと、登録した内容をもう一度開けます。そこで数値を直して保存するか、削除してください。
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <!-- 4 -->
+  <section id="s4">
+    <h2 class="sec"><span class="no">STEP 4</span>給料の計算ルール</h2>
+    <p class="sec-lead">このアプリは、次の考え方で金額を計算しています。表示される金額はあくまで目安で、実際の支給額は勤務先の規定によって決まります。</p>
+
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>項目</th><th>計算のしかた</th><th>例（今回の入力）</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>拘束時間</td>
+            <td>終了時刻 − 開始時刻</td>
+            <td class="num">6.5 時間</td>
+          </tr>
+          <tr>
+            <td>実働時間</td>
+            <td>拘束時間 − 休憩</td>
+            <td class="num">5.5 時間</td>
+          </tr>
+          <tr>
+            <td>基本給</td>
+            <td>実働時間 × 時給</td>
+            <td class="num">¥6,050</td>
+          </tr>
+          <tr>
+            <td>深夜割増</td>
+            <td>22:00〜翌5:00 の時間に対して +25%</td>
+            <td class="num">¥413（1.5時間分）</td>
+          </tr>
+          <tr>
+            <td>残業割増</td>
+            <td>1日8時間超、および週40時間超の時間に対して +25%<br>（両方に該当する時間を二重に加算することはありません）</td>
+            <td class="num">—</td>
+          </tr>
+          <tr>
+            <td>交通費</td>
+            <td>入力した金額をそのまま加算（年収の壁の集計には含めません）</td>
+            <td class="num">¥600</td>
+          </tr>
+          <tr>
+            <td><strong>支給額</strong></td>
+            <td>基本給 ＋ 各割増 ＋ 交通費</td>
+            <td class="num"><strong>¥7,063</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note warn">
+      <b>ご注意</b>
+      表示金額は税や社会保険料を差し引く前の金額です。締め日や端数処理の方法は勤務先によって異なるため、給与明細の金額と一致しない場合があります。最新の制度や基準は、必ず公式の情報でご確認ください。
+    </div>
+  </section>
+
+  <!-- 5 -->
+  <section id="s5">
+    <h2 class="sec"><span class="no">STEP 5</span>よくあるご質問</h2>
+
+    <div class="faq">
+      <details open>
+        <summary>登録したデータはどこに保存されますか？</summary>
+        <div class="a">お使いのブラウザの中に保存されます。サーバーには送信していません。そのため、別の端末やブラウザからは同じデータを見られません。また、ブラウザの閲覧データを削除すると、登録内容も消えます。</div>
+      </details>
+      <details>
+        <summary>日をまたぐ勤務はどう入力しますか？</summary>
+        <div class="a">開始を「22:00」、終了を「翌2:00」のように、終了時刻に開始より前の時刻を入れてください。日をまたいだ勤務として自動で判定され、深夜の時間も正しく計算されます。日付は「勤務を始めた日」を選んでください。</div>
+      </details>
+      <details>
+        <summary>「年収の壁」の金額は何を基準にしていますか？</summary>
+        <div class="a">2026年時点の基準にもとづいて表示しています。学生かどうかなどの条件によって基準額が変わるため、設定画面でご自身の状況を選んでください。制度は改正されることがあるため、最新の情報は公式の案内でご確認ください。</div>
+      </details>
+      <details>
+        <summary>記録を書き出せますか？</summary>
+        <div class="a">CSV形式で書き出せます。表計算ソフトで開いて、ご自身で集計したり保管したりできます。</div>
+      </details>
+      <details>
+        <summary>通信のない場所でも使えますか？</summary>
+        <div class="a">使えます。一度開いたあとはブラウザに保存されるため、機内モードなどオフラインの状態でも起動して入力できます。</div>
+      </details>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    操作マニュアルの制作サンプル（題材：自作アプリ「シフト給料ラボ」）　—　制作：neo.solution<br>
+    <a href="../index.html">ポートフォリオへ戻る</a>　/
+    <a href="https://stylishdeeb4.github.io/shift-pay-lab/" target="_blank" rel="noopener">題材にしたアプリを開く</a>
+  </div>
+</footer>
+
+</body>
+</html>
