@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>熊本 新規開業レポート｜サービスのご案内</title>
+<meta name="description" content="熊本市で先月、新たに営業許可が出た飲食店・宿泊施設の一覧を毎月お届けする情報サービスのご案内。月額3,000円・いつでも解約可・個人名は掲載しません。">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📄</text></svg>">
+<style>
+  :root{--ink:#1b2430;--dim:#5a6a7e;--mute:#8a98ab;--line:#dfe5ee;--soft:#f5f7fa;--accent:#0f766e;--accent-bg:#e6f4f1;--warn-bg:#fff7e6;--warn:#8a5a00}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#e9edf2}
+  body{color:var(--ink);font-family:"Yu Gothic UI","Yu Gothic","Meiryo","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;line-height:1.55;font-size:10.3pt;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .page{width:210mm;min-height:297mm;margin:10mm auto;background:#fff;padding:12mm 14mm 10mm;box-shadow:0 2px 14px rgba(0,0,0,.08);position:relative}
+  .top{display:flex;justify-content:space-between;align-items:center;font-size:9.5pt;color:var(--dim);border-bottom:1px solid var(--line);padding-bottom:6px;margin-bottom:14px}
+  .top b{color:var(--accent);font-weight:800;letter-spacing:.02em}
+  h1{font-size:17.5pt;font-weight:800;line-height:1.3}
+  .lead{font-size:10.3pt;color:var(--dim);margin-top:5px}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin:10px 0 8px}
+  .stat{border:1px solid var(--line);border-radius:8px;padding:6px 9px;background:#fff}
+  .stat b{display:block;font-size:16.5pt;font-weight:800;color:var(--accent);line-height:1.15}
+  .stat span{font-size:8pt;color:var(--dim);line-height:1.35;display:block}
+  h2{font-size:11.5pt;font-weight:800;display:flex;align-items:center;gap:8px;margin:10px 0 5px}
+  h2::before{content:"";width:4px;height:14px;background:var(--accent);border-radius:2px}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .chips span{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:1px 9px;font-size:9.5pt;margin:2px 3px 2px 0;color:var(--dim);background:#fff}
+  .box{background:var(--soft);border:1px solid var(--line);border-radius:8px;padding:9px 12px;font-size:10pt;color:var(--dim)}
+  .box b{color:var(--ink)}
+  .howto{background:var(--accent-bg);border:1px solid #cfe7e2;border-radius:8px;padding:9px 12px;font-size:10pt}
+  .howto b{color:var(--accent)}
+  table{border-collapse:collapse;width:100%;font-size:8.8pt}
+  th,td{padding:3px 6px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+  th{background:var(--soft);font-weight:700;color:var(--dim);font-size:8.5pt;white-space:nowrap}
+  td.d{white-space:nowrap;color:var(--dim);font-variant-numeric:tabular-nums}
+  .tw{border:1px solid var(--line);border-radius:8px;overflow:hidden}
+  .note{font-size:8.5pt;color:var(--mute);margin-top:4px}
+  ul{margin-left:16px;font-size:10pt} li{margin:2px 0}
+  .price{display:flex;gap:14px;align-items:center;border:2px solid var(--accent);border-radius:10px;padding:10px 14px;margin-top:6px}
+  .price .yen{font-size:24pt;font-weight:800;color:var(--accent);line-height:1.1;white-space:nowrap}
+  .price .yen small{font-size:9.5pt;color:var(--dim);font-weight:600;margin-left:6px}
+  .price ul{margin-left:14px;font-size:9.8pt}
+  .apply{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;margin-top:8px}
+  .apply .url{font-size:9.5pt;word-break:break-all;color:var(--accent)}
+  .qr img{width:24mm;height:24mm;display:block}
+  .flow{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:8px}
+  .flow div{border:1px solid var(--line);border-radius:8px;padding:7px 8px;font-size:9.5pt;background:#fff}
+  .flow b{display:block;color:var(--accent);font-size:9pt}
+  .faq dt{font-weight:700;font-size:10pt;margin-top:6px} .faq dd{font-size:9.8pt;color:var(--dim);margin-left:0}
+  .issuer{border-top:1px solid var(--line);margin-top:14px;padding-top:8px;font-size:9.5pt;color:var(--dim);display:flex;justify-content:space-between;gap:12px}
+  .issuer b{color:var(--ink)}
+  .foot{margin-top:12px;font-size:7.8pt;color:var(--mute);border-top:1px solid var(--line);padding-top:4px;display:flex;justify-content:space-between;gap:10px} .foot span:last-child{white-space:nowrap}
+  .warn{background:var(--warn-bg);border:1px solid #f3dfae;color:var(--warn);border-radius:8px;padding:7px 10px;font-size:9.3pt;margin-top:8px}
+  .screen-only{max-width:210mm;margin:12px auto 0;font-size:10pt;color:var(--dim);text-align:center}
+  .screen-only a{color:var(--accent)}
+  @media print{
+    html,body{background:#fff}
+    .page{margin:0;box-shadow:none;width:auto;min-height:auto;padding:0;page-break-after:always}
+    .page:last-of-type{page-break-after:auto}
+    .screen-only{display:none}
+    @page{size:A4;margin:12mm 14mm 12mm}
+  }
+</style>
+</head>
+<body>
+
+<div class="screen-only">PDF版はこちら → <a href="service.pdf">service.pdf</a>（印刷用・2ページ）</div>
+
+<section class="page">
+  <div class="top"><b>neo.solution</b><span>熊本 新規開業レポート｜サービスのご案内　2026年8月</span></div>
+  <h1>先月、熊本市で新たに営業許可が出た<br>飲食店・宿泊施設の一覧を、毎月お届けします。</h1>
+  <p class="lead">熊本市が公開している営業許可データを、区・許可日・屋号・所在地で読みやすく整理した月刊レポートです。「いま開こうとしている店」に最も早く届く一覧として、仕入・備品・看板・設備・保険・集客のご提案にお使いください。</p>
+
+  <div class="stats">
+    <div class="stat"><b>61</b><span>飲食店営業 新規許可<br>（2026年7月1〜9日）</span></div>
+    <div class="stat"><b>40</b><span>うち中央区<br>（中央区40・東区6・西区6・南区2・北区7）</span></div>
+    <div class="stat"><b>23</b><span>旅館業 新規許可<br>（2026年4〜7月）</span></div>
+    <div class="stat"><b>11</b><span>うち7月の宿泊施設<br>（簡易宿所が中心）</span></div>
+  </div>
+
+  <div class="two">
+    <div>
+      <h2>こんな会社に</h2>
+      <div class="chips"><span>食材卸</span><span>酒類卸</span><span>おしぼり・リネン</span><span>看板・印刷</span><span>厨房機器・POS</span><span>消防設備</span><span>清掃・害虫防除</span><span>LPガス</span><span>税理士・保険</span><span>Web制作・MEO</span><span>宿泊運営代行・清掃</span></div>
+      <div class="howto" style="margin-top:8px"><b>許可日からの数週間に、</b>仕入先・備品・看板・メニュー・レジ・消防設備・保険・求人・集客の判断が集中します。このリストは、その時期の店舗だけを抜き出した一覧です。</div>
+    </div>
+    <div>
+      <h2>お届けするもの</h2>
+      <div class="box">
+        <b>飲食店</b>：区・許可日・屋号・所在地（区ごとに許可日順）<br>
+        <b>宿泊施設</b>：許可日・施設名称・種別・所在地・申請者（法人のみ）・施設電話（法人のみ）<br>
+        <b>形式</b>：PDF＋CSV（Excelで開けます）＋閲覧ページ<br>
+        <b>頻度</b>：月1回、熊本市の更新（月1回）の翌週にメールでお届け<br>
+        <b>掲載しないもの</b>：申請者・代表者の氏名（屋号が個人名のときも伏せます）
+      </div>
+    </div>
+  </div>
+
+  <h2>サンプル（2026年7月分・抜粋）</h2>
+  <div class="tw"><table>
+    <thead><tr><th>区</th><th>許可日</th><th>屋号</th><th>所在地</th></tr></thead>
+    <tbody><tr><td>中央区</td><td class='d'>2026/7/1</td><td>Ｂｕｎｎｙ　Ｂｕｎｎｙ</td><td>熊本市中央区新市街3-12VIAｷﾑﾗﾋﾞﾙ2F-A･B</td></tr>
+<tr><td>中央区</td><td class='d'>2026/7/1</td><td>Ｌｏｕｎｇｅ　Ｌｉｌｙ</td><td>熊本市中央区下通1丁目8-18AI Ginza Twinﾋﾞﾙ10F-A･B号室</td></tr>
+<tr><td>中央区</td><td class='d'>2026/7/1</td><td>手羽先番長　熊本店</td><td>熊本市中央区紺屋町3丁目5</td></tr>
+<tr><td>東区</td><td class='d'>2026/7/1</td><td>にっこりキュート</td><td>熊本市東区長嶺南4丁目10-50木村ﾋﾞﾙ1F</td></tr>
+<tr><td>西区</td><td class='d'>2026/7/3</td><td>お好み焼き　はやしだ</td><td>熊本市西区上代1丁目20-6</td></tr>
+<tr><td>南区</td><td class='d'>2026/7/3</td><td>秀好彩　ダイノブ城南店</td><td>熊本市南区城南町下宮地430-1ｽｰﾊﾟｰｽﾄｱﾀﾞｲﾉﾌﾞ城南店内</td></tr>
+<tr><td>北区</td><td class='d'>2026/7/1</td><td>ＶＯＳＴＯＫ（ヴォストーク）</td><td>熊本市北区清水新地5丁目11-1-2F</td></tr></tbody>
+  </table></div>
+  <p class="note">飲食店は本号61件のうち7件を抜粋。本編では区ごとに全件を許可日順で掲載します。</p>
+  <div class="tw" style="margin-top:8px"><table>
+    <thead><tr><th>許可日</th><th>施設名称</th><th>種別</th><th>所在地</th><th>申請者（法人のみ）</th></tr></thead>
+    <tbody><tr><td class='d'>2026/07/01</td><td>パレット九品寺</td><td>簡易宿所営業</td><td>熊本市中央区九品寺3丁目15-12301 302 303</td><td>（個人のため非掲載）</td></tr>
+<tr><td class='d'>2026/07/06</td><td>みらいステイ本荘</td><td>簡易宿所営業</td><td>熊本市中央区本荘5丁目13-30107, 201, 302, 305</td><td>株式会社　いえコレ</td></tr>
+<tr><td class='d'>2026/07/06</td><td>GINKAMA STAY</td><td>簡易宿所営業</td><td>熊本市中央区内坪井町3-18</td><td>（個人のため非掲載）</td></tr></tbody>
+  </table></div>
+  <p class="note">宿泊施設は2026年4〜7月の23件（簡易宿所営業 20件、旅館・ホテル営業 3件）のうち3件を抜粋。</p>
+
+  <div class="foot"><span>出典：熊本市オープンデータ「飲食店営業許可施設一覧（新規）」「旅館業許可施設一覧（新規）」（公共データ利用規約 第1.0版／CC-BY）2026-08-23取得</span><span>1 / 2</span></div>
+</section>
+
+<section class="page">
+  <div class="top"><b>neo.solution</b><span>熊本 新規開業レポート｜料金・お申込み</span></div>
+
+  <h2 style="margin-top:0">料金</h2>
+  <div class="price">
+    <div class="yen">月額 3,000円<small>（税込）</small></div>
+    <ul>
+      <li>件数にかかわらず、当月の飲食店・宿泊施設の新規許可を全件収録</li>
+      <li>請求書払い（銀行振込）。初回はご入金確認後に配信開始</li>
+      <li><b>いつでも解約できます</b>（メール1通・翌月分から停止・日割り返金なし）</li>
+    </ul>
+  </div>
+
+  <h2>お申込み</h2>
+  <div class="apply">
+    <div>
+      <div style="font-size:10pt">下のフォームに会社名・ご担当者・配信先メールをご記入ください。2営業日以内に請求書（PDF）をお送りします。</div>
+      <div class="url">https://docs.google.com/forms/d/e/1FAIpQLSd-VJo4qdBYoS0rpWegKps9Nkqv68uTqrDwq052hXsPKwcerw/viewform</div>
+    </div>
+    <div class="qr"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQIAAAECAQAAAAA9NOT9AAACJUlEQVR42t1awW3EMAwT6gEyklfXSB7AgCqRsi9AH/2WDYKDg9zDPEoUJZ/FL5ebzje21bUfz8WIGOF57yfs8Xrx+Jf9dv2VbySKgrSxMJtRWCLXiS5qoYXF88ePlaR4AwGu0QD1sJCIgrNmBduaIYsleUkUoCYzpajRxFL5EggtRBofAVAuX66O/bjldIzaXOxkjC2EFtbgqzjSypeEwBtZ35lCHTC93I9GBE0eRUoHmB4vqPUsLlCzTn++UsqXCqriAnSUddk2UTHx+Yhh4f6vH6MaWymAnI45tj27xEDT0phBDaaeJi+wY59MoYLJ1Uru/HpjyFcwUxKdGpZAZSkiIMhGOAi5qaXJNGMZY2zHNowlDP+kW9bi5RqzkuXkArkDS6bmYZjy68QY1JiRNpbJ+WTUdxSUbvYdBNFnqvFyFNierjUkBY9idX+frNloMDnBYJs5Qi7GOIFBppzWmACHmibTg9Htl6WBoA0wJccLpZjJwualM0hNxxhI4w5hrLtjpJKct3SaZMoy44qaRrKkdOxTJTu6Tuk3TT/G/WP0yualIm0Izi442TtWPzhbvjMZOV5usry6GN+adb/nMBVUYReOWn3puSW2TSCn9HenqTdPLvmN8T6wQP8iVvfPuVgcA0NXSV7UsLwGYgBFmu78X+9crCpjN2XBphKlU/eMjxPyl6txkzwXoyazLztHyTUKUNQxNpWtY4w6GgC5+vIv/nfxDWNhXxLn1STWAAAAAElFTkSuQmCC" alt="お申込みフォームQR"></div>
+  </div>
+  <div class="flow">
+    <div><b>1. お申込み</b>フォーム送信（1分）</div>
+    <div><b>2. 請求書</b>2営業日以内にPDFをメール</div>
+    <div><b>3. ご入金</b>銀行振込（14日以内）</div>
+    <div><b>4. 配信開始</b>入金確認後すぐ最新号、以降毎月上旬</div>
+  </div>
+
+  <h2>掲載ルールとご利用範囲</h2>
+  <ul>
+    <li><b>出典</b>：熊本市オープンデータ（公共データ利用規約／CC-BY）。毎号に出典と取得日を明記します。</li>
+    <li><b>個人情報</b>：申請者氏名・代表者氏名は掲載しません。屋号が個人名と同一の場合も伏せます。</li>
+    <li><b>ご利用範囲</b>：お申込み企業内での営業・業務目的に限ります。第三者への再配布・転売・公開はできません。</li>
+    <li><b>正確性</b>：公開データに基づきます。「新規許可」には移転・業態変更・再取得が含まれることがあります。</li>
+  </ul>
+  <div class="warn">掲載店舗へご連絡の際は、関係法令（特定電子メール法・個人情報保護法等）と相手方の意思を尊重してください。</div>
+
+  <h2>よくあるご質問</h2>
+  <dl class="faq">
+    <dt>Q. 業態（居酒屋・カフェ等）は分かりますか？</dt><dd>A. 元データに区分がないため、現在は屋号と所在地のみです。次号から屋号ベースの推定業態を付ける予定です。</dd>
+    <dt>Q. 熊本市以外は対象ですか？</dt><dd>A. 現在は熊本市（飲食店・旅館業）です。熊本県（熊本市以外）の旅館業、新設法人の収録を順次追加します。</dd>
+    <dt>Q. どのくらいの鮮度ですか？</dt><dd>A. 熊本市の公開が月1回のため、前月分を翌月上旬にお届けします。</dd>
+    <dt>Q. まず1号だけ試せますか？</dt><dd>A. はい。月額制・いつでも解約のため、1か月のみのご利用も可能です。</dd>
+  </dl>
+
+  <div class="issuer">
+    <div><b>発行</b>：neo.solution　東 尚也（熊本県）<br><b>お問い合わせ</b>：neo.solutions.cw@gmail.com</div>
+    <div style="text-align:right"><b>特定商取引法に基づく表記・利用規約</b><br>https://stylishdeeb4.github.io/portfolio/kumamoto-report/tokushoho.html</div>
+  </div>
+
+  <div class="foot"><span>本資料は熊本市が公開する情報を整理したもので、掲載事業者との契約関係はありません。個人の氏名は掲載していません。</span><span>2 / 2</span></div>
+</section>
+</body>
+</html>
