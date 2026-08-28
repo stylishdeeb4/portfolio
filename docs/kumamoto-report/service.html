@@ -32,6 +32,7 @@
   th,td{padding:3px 6px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
   th{background:var(--soft);font-weight:700;color:var(--dim);font-size:8.5pt;white-space:nowrap}
   td.d{white-space:nowrap;color:var(--dim);font-variant-numeric:tabular-nums}
+  tbody tr:nth-child(even) td{background:#fafbfd}
   .tw{border:1px solid var(--line);border-radius:8px;overflow:hidden}
   .note{font-size:8.5pt;color:var(--mute);margin-top:4px}
   ul{margin-left:16px;font-size:10pt} li{margin:2px 0}
@@ -74,7 +75,7 @@
     <div class="stat"><b>61</b><span>飲食店営業 新規許可<br>（2026年7月1〜9日）</span></div>
     <div class="stat"><b>40</b><span>うち中央区<br>（中央区40・東区6・西区6・南区2・北区7）</span></div>
     <div class="stat"><b>23</b><span>旅館業 新規許可<br>（2026年4〜7月）</span></div>
-    <div class="stat"><b>11</b><span>うち7月の宿泊施設<br>（簡易宿所が中心）</span></div>
+    <div class="stat"><b>約49円</b><span>1店舗あたりの情報単価<br>（月額3,000円÷7月収録61件）</span></div>
   </div>
 
   <div class="two">
@@ -86,7 +87,7 @@
     <div>
       <h2>お届けするもの</h2>
       <div class="box">
-        <b>飲食店</b>：区・許可日・屋号・所在地（区ごとに許可日順）<br>
+        <b>飲食店</b>：区・許可日・屋号・<b>推定業態</b>・所在地（区ごとに許可日順）<br>
         <b>宿泊施設</b>：許可日・施設名称・種別・所在地・申請者（法人のみ）・施設電話（法人のみ）<br>
         <b>形式</b>：PDF＋CSV（Excelで開けます）＋閲覧ページ<br>
         <b>頻度</b>：月1回、熊本市の更新（月1回）の翌週にメールでお届け<br>
@@ -97,23 +98,22 @@
 
   <h2>サンプル（2026年7月分・抜粋）</h2>
   <div class="tw"><table>
-    <thead><tr><th>区</th><th>許可日</th><th>屋号</th><th>所在地</th></tr></thead>
-    <tbody><tr><td>中央区</td><td class='d'>2026/7/1</td><td>Ｂｕｎｎｙ　Ｂｕｎｎｙ</td><td>熊本市中央区新市街3-12VIAｷﾑﾗﾋﾞﾙ2F-A･B</td></tr>
-<tr><td>中央区</td><td class='d'>2026/7/1</td><td>Ｌｏｕｎｇｅ　Ｌｉｌｙ</td><td>熊本市中央区下通1丁目8-18AI Ginza Twinﾋﾞﾙ10F-A･B号室</td></tr>
-<tr><td>中央区</td><td class='d'>2026/7/1</td><td>手羽先番長　熊本店</td><td>熊本市中央区紺屋町3丁目5</td></tr>
-<tr><td>東区</td><td class='d'>2026/7/1</td><td>にっこりキュート</td><td>熊本市東区長嶺南4丁目10-50木村ﾋﾞﾙ1F</td></tr>
-<tr><td>西区</td><td class='d'>2026/7/3</td><td>お好み焼き　はやしだ</td><td>熊本市西区上代1丁目20-6</td></tr>
-<tr><td>南区</td><td class='d'>2026/7/3</td><td>秀好彩　ダイノブ城南店</td><td>熊本市南区城南町下宮地430-1ｽｰﾊﾟｰｽﾄｱﾀﾞｲﾉﾌﾞ城南店内</td></tr>
-<tr><td>北区</td><td class='d'>2026/7/1</td><td>ＶＯＳＴＯＫ（ヴォストーク）</td><td>熊本市北区清水新地5丁目11-1-2F</td></tr></tbody>
+    <thead><tr><th>区</th><th>許可日</th><th>屋号</th><th>推定業態</th><th>所在地</th></tr></thead>
+    <tbody><tr><td>中央区</td><td class='d'>2026/7/1</td><td>Ｌｏｕｎｇｅ　Ｌｉｌｙ</td><td>バー・スナック</td><td>熊本市中央区下通1丁目8-18AI Ginza Twinﾋﾞﾙ10F-A･B号室</td></tr>
+<tr><td>中央区</td><td class='d'>2026/7/1</td><td>手羽先番長　熊本店</td><td>焼鳥・串</td><td>熊本市中央区紺屋町3丁目5</td></tr>
+<tr><td>東区</td><td class='d'>2026/7/24</td><td>ＭＹ　ＤＩＳＨ　～こころ庵～　Ｂｅｎｔｏ＆Ｃａｆé</td><td>カフェ・喫茶</td><td>熊本市東区江津1丁目30-10</td></tr>
+<tr><td>西区</td><td class='d'>2026/7/14</td><td>苺乃ゑびす屋／弁天</td><td>菓子・スイーツ</td><td>熊本市西区河内町船津2947</td></tr>
+<tr><td>南区</td><td class='d'>2026/7/3</td><td>焼き鳥　小町</td><td>焼鳥・串</td><td>熊本市南区城南町下宮地430-1</td></tr>
+<tr><td>北区</td><td class='d'>2026/7/10</td><td>松村産業　味処　松むら</td><td>うなぎ・和食</td><td>熊本市北区龍田7丁目20-11</td></tr></tbody>
   </table></div>
-  <p class="note">飲食店は本号61件のうち7件を抜粋。本編では区ごとに全件を許可日順で掲載します。</p>
+  <p class="note">飲食店61件のうち6件を抜粋（本編は区ごとに全件掲載）。推定業態は屋号からの機械推定で、本号は36件に付与。判別できない屋号は「—」。</p>
   <div class="tw" style="margin-top:8px"><table>
     <thead><tr><th>許可日</th><th>施設名称</th><th>種別</th><th>所在地</th><th>申請者（法人のみ）</th></tr></thead>
     <tbody><tr><td class='d'>2026/07/01</td><td>パレット九品寺</td><td>簡易宿所営業</td><td>熊本市中央区九品寺3丁目15-12301 302 303</td><td>（個人のため非掲載）</td></tr>
 <tr><td class='d'>2026/07/06</td><td>みらいステイ本荘</td><td>簡易宿所営業</td><td>熊本市中央区本荘5丁目13-30107, 201, 302, 305</td><td>株式会社　いえコレ</td></tr>
 <tr><td class='d'>2026/07/06</td><td>GINKAMA STAY</td><td>簡易宿所営業</td><td>熊本市中央区内坪井町3-18</td><td>（個人のため非掲載）</td></tr></tbody>
   </table></div>
-  <p class="note">宿泊施設は2026年4〜7月の23件（簡易宿所営業 20件、旅館・ホテル営業 3件）のうち3件を抜粋。</p>
+  <p class="note">宿泊施設は4〜7月の23件（簡易宿所営業 20件、旅館・ホテル営業 3件）のうち3件を抜粋。</p>
 
   <div class="foot"><span>出典：熊本市オープンデータ「飲食店営業許可施設一覧（新規）」「旅館業許可施設一覧（新規）」（公共データ利用規約 第1.0版／CC-BY）2026-08-23取得</span><span>1 / 2</span></div>
 </section>
@@ -157,7 +157,7 @@
 
   <h2>よくあるご質問</h2>
   <dl class="faq">
-    <dt>Q. 業態（居酒屋・カフェ等）は分かりますか？</dt><dd>A. 元データに区分がないため、現在は屋号と所在地のみです。次号から屋号ベースの推定業態を付ける予定です。</dd>
+    <dt>Q. 業態（居酒屋・カフェ等）は分かりますか？</dt><dd>A. 屋号からの推定業態（ラーメン・カフェ・居酒屋など25分類）を全件に付けています。本号は61件中36件に付与。判別できない屋号は空欄のままお届けします（推定のため参考情報です）。</dd>
     <dt>Q. 熊本市以外は対象ですか？</dt><dd>A. 現在は熊本市（飲食店・旅館業）です。熊本県（熊本市以外）の旅館業、新設法人の収録を順次追加します。</dd>
     <dt>Q. どのくらいの鮮度ですか？</dt><dd>A. 熊本市の公開が月1回のため、前月分を翌月上旬にお届けします。</dd>
     <dt>Q. まず1号だけ試せますか？</dt><dd>A. はい。月額制・いつでも解約のため、1か月のみのご利用も可能です。</dd>
