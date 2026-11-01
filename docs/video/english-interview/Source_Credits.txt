@@ -1,0 +1,23 @@
+INDEPENDENT ENGLISH INTERVIEW EDITING SAMPLE
+Editor: Naoya Higashi / neo.solution
+This is a self-directed practice edit, not commissioned work.
+No endorsement or affiliation with the speaker or Blender is implied.
+
+Original work:
+Interview with Ton Roosendaal introducing Project Gooseberry (29 March 2014)
+Creator: Blender Foundation — https://www.blender.org/
+Interview: Bart Veldhuizen
+Original edit: Francesco Siddi
+
+Source and license record:
+https://commons.wikimedia.org/wiki/File:Interview_with_Ton_Roosendaal_introducing_Project_Gooseberry.ogv
+License: Creative Commons Attribution 3.0 Unported (CC BY 3.0)
+https://creativecommons.org/licenses/by/3.0/
+Retrieved: 2026-10-28
+
+Changes: selected a continuous excerpt, reframed it vertically, added an editorial headline and English captions, reduced original audio gain and replaced the source title with a 0.6-second hold of the first clean interview image. Original recorded voice retained.
+
+English subtitle reference:
+https://commons.wikimedia.org/wiki/TimedText:Interview_with_Ton_Roosendaal_introducing_Project_Gooseberry.ogv.en.srt
+
+The excerpt discusses artists and developers collaborating on software. The source is from 2014; it is not a statement about present-day hiring or an endorsement of this editor.
